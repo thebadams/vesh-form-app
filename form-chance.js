@@ -69,10 +69,28 @@ const determineChance = (days) => {
   return chance
 }
 
-const rollNewForm = () => {
+const determineChange =  (chance) => {
+  let change
+  if(chance === 0) {
+    change = true
+  }
+  const roll = Math.random()*100
+  if(roll >= chance) {
+    change = true
+  } else if( roll < chance) {
+    change = false
+  }
+  console.log(change)
+  return change
+}
+const determinePossibleForms = () => {
   const currentForm = prevForms[prevForms.length-1];
   const possibleForms = forms.filter(form => form!== currentForm)
   console.log(possibleForms)
+  return possibleForms
+}
+const rollNewForm = () => {
+
 
 }
 
