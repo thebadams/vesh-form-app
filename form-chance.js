@@ -89,9 +89,13 @@ const determinePossibleForms = () => {
   console.log(possibleForms)
   return possibleForms
 }
-const rollNewForm = () => {
+const rollNewForm = (possibleForms) => {
+  const formIndex = Math.floor(Math.random() *3);
 
+  const newForm = possibleForm[formIndex];
+
+  console.log(newForm);
+  return newForm
 
 }
 
-rollNewForm(forms)
