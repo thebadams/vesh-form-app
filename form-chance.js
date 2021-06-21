@@ -39,4 +39,39 @@ const determineDays = (prevForms) => {
   console.log(days)
   return days
 }
-determineChance(prevForms)
+
+const determineChance = (days) => {
+  let chance
+  switch (days) {
+    case 1:
+      chance = 50
+      break;
+    case 2:
+      chance = 40
+      break;
+    case 3:
+      chance = 30
+      break;
+    case 4:
+      chance = 20
+      break;
+    case 5:
+      chance = 10
+      break;
+    case 6:
+      chance = 0
+      break;
+    default:
+      chance = "Error!"
+      break;
+  }
+  console.log(chance)
+}
+
+determineChance(1)
+determineChance(2)
+determineChance(3)
+determineChance(4)
+determineChance(5)
+determineChance(6)
+determineChance(7)
