@@ -15,15 +15,15 @@
 //Day 6: Vehsfomhar => roll d100, result >=0: new Form
 // Day 7: New Form
 
-const possibleForms = ["Veshgeimreadh", "Veshearach", "Veshsamradh", "Veshfomhar"];
+const forms = ["Veshgeimreadh", "Veshearach", "Veshsamradh", "Veshfomhar"];
 
 const prevForms = [
-  possibleForms[1], 
-  possibleForms[0],
-  possibleForms[0],
-  possibleForms[0],
-  possibleForms[0],
-  possibleForms[0]
+  forms[0], 
+  forms[0],
+  forms[0],
+  forms[0],
+  forms[0],
+  forms[1]
 ]
 
 const determineDays = (prevForms) => {
@@ -66,12 +66,14 @@ const determineChance = (days) => {
       break;
   }
   console.log(chance)
+  return chance
 }
 
-determineChance(1)
-determineChance(2)
-determineChance(3)
-determineChance(4)
-determineChance(5)
-determineChance(6)
-determineChance(7)
+const rollNewForm = () => {
+  const currentForm = prevForms[prevForms.length-1];
+  const possibleForms = forms.filter(form => form!== currentForm)
+  console.log(possibleForms)
+
+}
+
+rollNewForm(forms)
